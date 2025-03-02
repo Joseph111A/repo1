@@ -1,4 +1,4 @@
-package trabajos_clase;
+package trabajos_clase;//si tu codigo falla quitaq esta linea pues me sale por defecto
 
 public class datos_numericos {
 
@@ -17,6 +17,14 @@ public class datos_numericos {
 
         boolean verdadero = true; // 1 bit
         boolean falso = false; // 1 bit
+        //  integer es un valor no primitivo que se puede asignar a null
+        //tambien se le puede asignar metodos y propiedades
+        Integer enter = null;
+
+        String cadena = "Hola mundo ";
+        String cadena2 = "El mejor es joseph ";
+        final float Pi = 3.1416f;//Este es un valor constante
+         
 
 
         System.out.println("El valor de entero1 es: " + entero1);
@@ -28,5 +36,8 @@ public class datos_numericos {
         System.out.println("El valor de caracter es: " + caracter);
         System.out.println("El valor de verdadero es: " + verdadero);
         System.out.println("El valor de falso es: " + falso);
+        System.out.println("El valor es : "+ enter);
+        System.out.println(cadena + cadena2);
+        System.out.println("el valor de pi es: "+Pi);
     }
 }
