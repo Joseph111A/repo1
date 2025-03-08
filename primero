@@ -1,0 +1,83 @@
+import java.awt.*; //Importar herramienta awt
+import javax.swing.*; //Importar libreria swing
+import java.awt.event.*;
+
+//crear la primera interfaz en java
+public class interfaz {
+    public static void main(String[] args) {
+        Ventana1 objeto1 = new Ventana1(); //Instanciar la clase
+        objeto1.setVisible(true); //Hacer visible la ventana
+        objeto1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Matar la ventana
+        laminal mLaminal = new laminal();
+        objeto1.add(mLaminal);
+        hojaboton hoja1 = new hojaboton();
+        objeto1.add(hoja1);
+       
+    }
+}
+
+class Ventana1 extends JFrame {
+    public Ventana1() { //Constructor del objeto
+       // setSize(500,500); //tamaño de la ventana
+        //setLocation(433, 134); //Ubicacion de pantalla
+        setBounds(500,170,400,500); //recoge ubicacion y tamaño de la ventana
+        setTitle("Los Botones... "); //Titulo de la ventana
+    }
+}
+
+class hojaboton extends JPanel implements ActionListener {
+    JButton boton1 = new JButton("pagina"); //panel invisible que contiene el contenido
+    JButton boton2 = new JButton("White");
+    JButton boton3 = new JButton("Black");
+    
+    public hojaboton() { //constructor de la clase
+        add(boton1);
+        add(boton2);
+        add(boton3); //añadimos el boton al panel
+        boton1.addActionListener(this);
+        Marco mimarco= new Marco();
+        boton1.addActionListener(mimarco);
+        boton2.addActionListener(this);
+        boton3.addActionListener(this);
+        
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==boton1){
+            setBackground(Color.red);
+
+        }else if (e.getSource()==boton2){
+            setBackground(Color.white);
+
+        }else if (e.getSource()==boton3){
+            setBackground(Color.black);
+        }
+        
+
+    }
+}
+
+class laminal extends JPanel {
+    public void paintComponent(Graphics g) { //Todo lo que esta dentro de la clase Jcomponent
+        super.paintComponent(g);
+        g.drawString("segunda clase ", 100, 100);
+    }
+}
+class Marco implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+    Marco_emergente cuadro2= new Marco_emergente();
+    cuadro2.setVisible(true);
+
+    }
+
+class Marco_emergente extends JFrame{
+    public Marco_emergente(){
+        setTitle("ventana emergente");
+        setBounds(500, 170, 400, 500);
+        setResizable(true);
+
+    
+}
+
+    }
+}
